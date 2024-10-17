@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <style>
+        #body {
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-color:rgb(233, 132, 132);
+        }
+        #feed{
+            height: 600px;
+            border: 1px solid black;
+            padding-top: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            background: whitesmoke;
+            box-shadow: 1px 1px;
+            border-radius: 20px;
+        }
+
+        .rating{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .sumit{
+            width: 30%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #buttn{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body id="body">
+
+    
+    <h2>Feedback Form</h2>
+    <div id="feed">
+
+    <form action="/submit" method="POST">
+        <label for="feedback-type">Feedback Type:</label>
+        <br>
+        <select id="feedback-type" name="feedback-type" required>
+            <option value="">Select Feedback Type</option>
+            <option value="complaint">Complaint</option>
+            <option value="suggestion">Suggestion</option>
+            <option value="inquiry">Inquiry</option>
+            <option value="other">Other</option>
+        </select>
+        <br><br>
+
+        <label for="message">Your Message:</label> <br>
+        <textarea id="message" name="message" rows="3" cols="50" required></textarea>
+        <br><br>
+
+        <div class="ratings">
+            <label><input type="radio" id="rating1" name="rating" value="1" required>Excellent</label>
+            <label><input type="radio" id="rating2" name="rating" value="2">Good</label>
+            <label><input type="radio" id="rating3" name="rating" value="3">Average</label>
+            <label><input type="radio" id="rating4" name="rating" value="4">Poor</label>
+        </div>
+        <br><br>
+
+        <label for="age">Your Age:</label><br>
+        <input type="number" id="age" name="age" min="10" max="100" required>
+        <br><br>
+
+        <label for="email">Your Email*:</label><br>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" minlength="7" required>
+        <br><br>
+
+        <label for="website">Your Website (Optional):</label><br>
+        <input type="url" id="website" name="website">
+        <br><br>
+
+        <input type="checkbox" id="terms" name="terms" required>
+        <label for="terms">I agree to the terms and conditions</label>
+        <br><br>
+
+        <div id="buttn">
+            <button type="submit" class="sumit">Submit</button>
+        </div>
+    </form>
+    </div>
+</body>
+</html>
